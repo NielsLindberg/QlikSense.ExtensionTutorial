@@ -1,1 +1,9 @@
-13
+{
+    "name" : "Extension Tutorial - Hello World",
+    "description" : "Extension Tutorial, Chapter 3, Simple Hello World.",
+    "icon" : "extension",
+    "type" : "visualization",
+    "version": "0.1",
+    "preview" : "bar",
+    "author": "Stefan Walther"
+}
