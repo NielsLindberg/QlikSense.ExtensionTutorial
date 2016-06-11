@@ -1,30 +1,13 @@
 define([
-        'jquery'
+        'jquery',
+        './properties'
     ],
-    function($) {
+    function( $, props ) {
         'use strict';
 
         return {
 
-            definition: {
-                type: "items",
-                component: "accordion",
-                items: {
-                    dimensions: {
-                        uses: "dimensions"
-                    },
-                    measures: {
-                        uses: "measures"
-                    },
-                    sorting: {
-                        uses: "sorting"
-                    },
-                    appearancePanel: {
-                        uses: "settings"
-                    }
-                }
-            },
-            //Paint resp.Rendering logic
+            definition: props,
             paint: function($element, layout) {
                 $element.empty();
 

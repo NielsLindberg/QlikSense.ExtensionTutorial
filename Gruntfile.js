@@ -5,7 +5,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: false,
                     cwd: '',
-                    src: ['HelloWorld.js','HelloWorld.qext'],
+                    src: ['HelloWorld.js','HelloWorld.qext', 'properties.js'],
                     dest: 'C:/Users/Niels/Documents/Qlik/Sense/Extensions/ExtensionTutorial/'
                 }]
             }
