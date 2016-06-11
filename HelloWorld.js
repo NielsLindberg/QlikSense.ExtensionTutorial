@@ -10,38 +10,35 @@ define([
                 type: "items",
                 component: "accordion",
                 items: {
+                    dimensions: {
+                        uses: "dimensions"
+                    },
+                    measures: {
+                        uses: "measures"
+                    },
+                    sorting: {
+                        uses: "sorting"
+                    },
                     appearancePanel: {
-                        uses: "settings",
-                        items: {
-                            MyStringProp: {
-                                ref: "myDynamicOutput",
-                                type: "string",
-                                label: "Hello World Text"
-                            }
-                        }
+                        uses: "settings"
                     }
                 }
             },
             //Paint resp.Rendering logic
             paint: function($element, layout) {
+                $element.empty();
 
-                //lazy
-                //$element.empty();
+                console.info('paint >> layout >> ', layout);
+                var $msg = $( document.createElement( 'div' ));
 
+                var html = '<strong>Property values: </strong><br/>';
+                html += 'Title: ' + layout.title + '<br/>';
+                html += 'SubTitle: ' + layout.subtitle + '<br/>';
 
-                //Smart
-                var id = layout.qInfo.qId + '_helloworld';
-                var $helloWorld = $('#' + id);
-                if (!$helloWorld.length) {
-                    console.log('No element found with the given Id, so create the element');
-                    $helloWorld = $(document.createElement('div'));
-                    $helloWorld.attr('id', id);
-                    $helloWorld.html('Hello World');
-                    $element.append($helloWorld);
-                } else {
-                    console.log('Found an element with the given Id, so just change it');
-                    $helloWorld.html('Hello World');
-                }
+                $msg.html( html );
+
+                $element.append($msg);
+
 
             }
         };
