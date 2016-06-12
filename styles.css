@@ -1,35 +1,72 @@
 .qv-object-dataExtension div.qv-object-content-container {
-    overflow: scroll;
+    height: 100%;
+    width: 100%;
 }
 
-.qv-object-dataExtension td,
+.qv-object-dataExtension table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.qv-object-dataExtension .tbl-header {
+    background-color: rgb(0, 0, 160);
+    color: rgb(255, 255, 255);
+    border-radius: 5px 5px 0 0;
+}
+
+.qv-object-dataExtension .tbl-content {
+    overflow-x: auto;
+    margin-top: 0px;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 0 0 5px 5px;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
 .qv-object-dataExtension th {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: middle;
-    cursor: default;
+    padding: 10px 5px;
+    text-align: left;
+    font-weight: 500;
     font-size: 12px;
+    text-transform: uppercase;
+}
+
+.qv-object-dataExtension td {
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 12px;
+    border-bottom: solid 1px rgb(220, 220, 220);
+}
+
+.qv-object-dataExtension .tbl-wrapper {
+    padding:10px;
+    height:calc(100% - 10px * 2);
+}
+.qv-object-dataExtension section {
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .qv-object-dataExtension .right-align {
     text-align: right;
 }
+
 .qv-object-dataExtension .left-align {
     text-align: left;
 }
 
 .qv-object-dataExtension .arrow {
-    width: 25px;
+    width:16px;
 }
 
-.qv-object-dataExtension .arrow img {
-    height: 12px;
-    width: 12px;
-    display: block;
-    margin: auto;
-}
 
-.qv-object-dataExtension button {
-    width: 100%;
-}
+
+

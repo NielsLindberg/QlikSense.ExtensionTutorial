@@ -21,30 +21,41 @@ define([
             paint: function($element, layout) {
 
                 var hc = layout.qHyperCube;
-                console.log('Data returned: ', hc);
+                console.log(layout);
 
                 $element.empty();
-                var table = '<table>';
-                table += '<thead>';
-                table += '<tr>';
+                var html = '<div class="tbl-wrapper">';
+                html += '<section>';
+                html += '<div class="tbl-header">';
+                html += '<table cellpadding="0", cellspacing="0", border="0">';
+                html += '<thead>';
+                html += '<tr>';
 
                 //irreterate over dimensionsInfo
                 hc.qDimensionInfo.forEach(function(dim, index) {
-                    table += '<th class="left-align">' + dim.qFallbackTitle + '</th>';
+                    html += '<th class="left-align">' + dim.qFallbackTitle + '</th>';
                 });
 
                 //irreterate over measuresInfo
                 hc.qMeasureInfo.forEach(function(mes, index) {
-                    table += '<th class="right-align">' + mes.qFallbackTitle + '</th>';
+                    if (!mes.growtharrow) {
+                        html += '<th class="right-align">' + mes.qFallbackTitle + '</th>';
+                    } else {
+                        html += '<th class="arrow">' + mes.qFallbackTitle + '</th>';
+                    }
                 });
 
-                table += '</tr>';
-                table += '<thead>';
-                table += '<tbody>';
+                html += '</tr>';
+                html += '</thead>';
+                html += '</table>';
+                html += '</div>';
+                html += '<div class="tbl-content">';
+                html += '<table cellpadding="0", cellspacing="0", border="0">';
+                html += '<tbody>';
 
                 //irreterate over all rows
                 hc.qDataPages[0].qMatrix.forEach(function(row, index) {
-                    table += '<tr>';
+                    html += '<tr>';
 
                     row.forEach(function(cell, index) {
                         var cellValue = '<td class="right-align">' + cell.qText + '</td>';
@@ -58,18 +69,20 @@ define([
                                     cellValue = '<td class="right-align arrow"></td>';
                                 }
                             }
-                        } else  {
+                        } else {
                             cellValue = '<td class="left-align">' + cell.qText + '</td>';
                         }
-                        table += cellValue;
+                        html += cellValue;
                     });
-                    table += '</tr>';
+                    html += '</tr>';
                 });
 
-                table += '<tbody>';
-                table += '</table>';
-                var container = '<div class="dataTable">' + table + '</div>';
-                $element.append(container);
+                html += '</tbody>';
+                html += '</table>';
+                html += '</div>';
+                html += '</section>';
+                html += '</div>';
+                $element.append(html);
 
             }
         };
