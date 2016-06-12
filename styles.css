@@ -1,0 +1,35 @@
+.qv-object-dataExtension div.qv-object-content-container {
+    overflow: scroll;
+}
+
+.qv-object-dataExtension td,
+.qv-object-dataExtension th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    cursor: default;
+    font-size: 12px;
+}
+
+.qv-object-dataExtension .right-align {
+    text-align: right;
+}
+.qv-object-dataExtension .left-align {
+    text-align: left;
+}
+
+.qv-object-dataExtension .arrow {
+    width: 25px;
+}
+
+.qv-object-dataExtension .arrow img {
+    height: 12px;
+    width: 12px;
+    display: block;
+    margin: auto;
+}
+
+.qv-object-dataExtension button {
+    width: 100%;
+}

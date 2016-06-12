@@ -11,7 +11,7 @@ define([
             paint: function($element, layout) {
                 $element.empty();
 
-                console.info('paint >> layout >> ', layout);
+                console.log('paint >> layout >> ', layout);
                 var $msg = $( document.createElement( 'div' ));
 
                 var html = '<strong>Property values: </strong><br/>';
