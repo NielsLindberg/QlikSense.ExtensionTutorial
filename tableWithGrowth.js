@@ -6,19 +6,19 @@ define([
     function($, props) {
         'use strict';
         var palette = [
-        "#b0afae",
-        "#7b7a78",
-        "#545352",
-        "#4477aa",
-        "#7db8da",
-        "#b6d7ea",
-        "#46c646",
-        "#f93f17",
-        "#ffcf02",
-        "#276e27",
-        "#ffffff",
-        "#000000"
-    ];
+            "#b0afae",
+            "#7b7a78",
+            "#545352",
+            "#4477aa",
+            "#7db8da",
+            "#b6d7ea",
+            "#46c646",
+            "#f93f17",
+            "#ffcf02",
+            "#276e27",
+            "#ffffff",
+            "#000000"
+        ];
         return {
             definition: props,
             initialProperties: {
@@ -58,6 +58,7 @@ define([
                     }
                 });
 
+                html += '<th class="scroll-offset"></th>';
                 html += '</tr>';
                 html += '</thead>';
                 html += '</table>';
@@ -98,6 +99,23 @@ define([
                 $element.append(html);
                 $element.find('.tbl-header').css("background-color", palette[layout.headerBgColor]);
                 $element.find('.tbl-header').css("color", palette[layout.headerColor]);
+
+                $(document).ready(function() {
+                    var scrollElement = $element.find('.tbl-content')[0];
+                    console.log($('.tbl-content')[0].clientHeight);
+                    console.log($('.tbl-content').height());
+                    console.log(scrollElement);
+                    var clientHeight = scrollElement.clientHeight;
+                    var scrollHeight = scrollElement.scrollHeight;
+                    console.log(clientHeight);
+                    console.log(scrollHeight);
+                    console.log(scrollHeight > clientHeight);
+                    if (scrollHeight > clientHeight) {
+                        $element.find('.scroll-offset').css("width", "6px");
+                    } else {
+                        $element.find('.scroll-offset').css("width", "0px");
+                    }
+                });
             }
         };
     });
