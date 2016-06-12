@@ -100,10 +100,12 @@ define([
                 $element.find('.tbl-header').css("background-color", palette[layout.headerBgColor]);
                 $element.find('.tbl-header').css("color", palette[layout.headerColor]);
 
-                $(document).ready(function() {
                     var scrollElement = $element.find('.tbl-content')[0];
                     console.log($('.tbl-content')[0].clientHeight);
                     console.log($('.tbl-content').height());
+                    console.log($('.tbl-content').innerHeight());
+                    console.log($('.tbl-content')[0].offsetHeight);
+                    console.log($('.tbl-content')[0].scrollHeight);
                     console.log(scrollElement);
                     var clientHeight = scrollElement.clientHeight;
                     var scrollHeight = scrollElement.scrollHeight;
@@ -111,11 +113,10 @@ define([
                     console.log(scrollHeight);
                     console.log(scrollHeight > clientHeight);
                     if (scrollHeight > clientHeight) {
-                        $element.find('.scroll-offset').css("width", "6px");
+                        $element.find('.scroll-offset').css("width", "10px");
                     } else {
                         $element.find('.scroll-offset').css("width", "0px");
                     }
-                });
             }
         };
     });
