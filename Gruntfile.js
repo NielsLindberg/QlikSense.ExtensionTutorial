@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                 {
                     expand: false,
                     cwd: '',
-                    src: ['dataExtension.js','dataExtension.qext', 'dataExtensionProperties.js', 'styles.css', 'arrowUp.png', 'arrowDown.png'],
+                    src: ['tableWithGrowth.js','tableWithGrowth.qext', 'tableWithGrowthProperties.js', 'styles.css', 'arrowUp.png', 'arrowDown.png'],
                     dest: 'C:/Users/Niels/Documents/Qlik/Sense/Extensions/DataExtension/'
                 }
                 ]

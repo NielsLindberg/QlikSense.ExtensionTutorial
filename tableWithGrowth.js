@@ -1,11 +1,24 @@
 define([
         'jquery',
-        './dataExtensionProperties',
-        'css!./styles.css',
-        'css!//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'
+        './tableWithGrowthProperties',
+        'css!./styles.css'
     ],
     function($, props) {
         'use strict';
+        var palette = [
+        "#b0afae",
+        "#7b7a78",
+        "#545352",
+        "#4477aa",
+        "#7db8da",
+        "#b6d7ea",
+        "#46c646",
+        "#f93f17",
+        "#ffcf02",
+        "#276e27",
+        "#ffffff",
+        "#000000"
+    ];
         return {
             definition: props,
             initialProperties: {
@@ -41,7 +54,7 @@ define([
                     if (!mes.growtharrow) {
                         html += '<th class="right-align">' + mes.qFallbackTitle + '</th>';
                     } else {
-                        html += '<th class="arrow">' + mes.qFallbackTitle + '</th>';
+                        html += '<th class="arrow">' + ' ' + '</th>';
                     }
                 });
 
@@ -83,7 +96,8 @@ define([
                 html += '</section>';
                 html += '</div>';
                 $element.append(html);
-
+                $element.find('.tbl-header').css("background-color", palette[layout.headerBgColor]);
+                $element.find('.tbl-header').css("color", palette[layout.headerColor]);
             }
         };
     });

@@ -1,9 +1,0 @@
-{
-    "name" : "Hello Data",
-    "description" : "Examples how to use data in visualization extensions.",
-    "icon" : "extension",
-    "type" : "visualization",
-    "version": "0.1.0",
-    "preview" : "08-hellodata.png",
-    "author": "Stefan Walther"
-}
